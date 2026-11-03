@@ -1,0 +1,44 @@
+/* ==========================================================
+   1. GENÉTICA DEL NAVEGADOR (Herencia Global)
+   ========================================================== */
+/* Definimos una tipografía limpia y un color de texto base suave */
+body {
+    font-family: sans-serif;
+    color: #5c4b51;
+    background-color: #fff8f9; /* Fondo rosa crema super delicado */
+}
+
+/* ==========================================================
+   2. AISLAMIENTO POR ZONAS (Selectores Combinados)
+   ========================================================== */
+/* Enlaces exclusivos del menú principal (Header) - Rosa fresita elegante */
+header nav ul li a {
+    color: #e87a90;
+    text-decoration: none;
+}
+
+/* Enlaces exclusivos de la barra lateral (Aside) - Tono malva suave */
+aside ul li a {
+    color: #b57c9e;
+    text-decoration: none;
+}
+
+/* Enlaces exclusivos del pie de página (Footer) - Rosa grisáceo delicado */
+footer ul li a {
+    color: #d8a7b1;
+    text-decoration: none;
+}
+
+/* ==========================================================
+   3. CONFLICTO DE AUTORIDAD (Cascada vs Especificidad)
+   ========================================================== */
+/* La regla por Clase equivale a 10 puntos de especificidad */
+.btn-comprar {
+    color: #d4a5a5; /* Rosa pastel suave */
+}
+
+/* La regla por ID equivale a 100 puntos de especificidad.
+   El peso del ID aplasta el color de la clase y aplica el rosa fresita encendido */
+#btn-destacado {
+    color: #ff6b8b; /* Fresita destacado */
+}
