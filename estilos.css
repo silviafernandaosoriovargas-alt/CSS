@@ -1,44 +1,97 @@
-/* ==========================================================
+/* ========================================================
+   0. NEUTRALIZACIÓN Y MODELO DE CAJA (Subactividad 2)
+   ======================================================== */
+* {
+  box-sizing: border-box; /* Obligatorio: hace que padding y border crezcan hacia adentro */
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================================
    1. GENÉTICA DEL NAVEGADOR (Herencia Global)
-   ========================================================== */
-/* Definimos una tipografía limpia y un color de texto base suave */
+   ======================================================== */
 body {
     font-family: sans-serif;
     color: #5c4b51;
     background-color: #fff8f9; /* Fondo rosa crema super delicado */
 }
 
-/* ==========================================================
-   2. AISLAMIENTO POR ZONAS (Selectores Combinados)
-   ========================================================== */
-/* Enlaces exclusivos del menú principal (Header) - Rosa fresita elegante */
-header nav ul li a {
-    color: #e87a90;
-    text-decoration: none;
+/* ========================================================
+   2. AISLAMIENTO POR ZONAS Y FONDOS (Modelo de Caja)
+   ======================================================== */
+header {
+    background-color: #ffd1dc;
+    background-image: url('https://www.posizionate.com/hubfs/agentes%20ia%20hubspot.png'); /* Imagen de fondo para cumplir con la guía */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-/* Enlaces exclusivos de la barra lateral (Aside) - Tono malva suave */
+header nav ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+/* Alinea los elementos del menú en horizontal sin usar Flexbox ni Grid */
+header nav ul li {
+    display: inline-block; 
+    margin: 0 15px; /* Espacio horizontal entre cada opción */
+}
+
+header nav ul li a {
+    color: #ffffff; /* Texto blanco para que resalte sobre la imagen */
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro suave para una lectura perfecta */
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+main {
+    background-color: #f9f9f9;
+    padding: 20px; /* Aire interno para las tarjetas */
+}
+
+aside {
+    background-color: #fff0f5;
+    padding: 15px;
+    margin-top: 20px;
+}
+
 aside ul li a {
     color: #b57c9e;
     text-decoration: none;
 }
 
-/* Enlaces exclusivos del pie de página (Footer) - Rosa grisáceo delicado */
+footer {
+    background-color: #e6e6fa;
+    padding: 15px;
+    text-align: center;
+}
+
 footer ul li a {
     color: #d8a7b1;
     text-decoration: none;
 }
 
-/* ==========================================================
+/* Espaciamiento interno (padding) y externo (margin) en las tarjetas de producto */
+article {
+    background-color: #ffffff;
+    padding: 20px;     /* Inyecta aire de protección para que los textos no toquen los bordes */
+    margin: 15px 0;    /* Campo de fuerza exterior para que no colisionen entre sí */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+/* ========================================================
    3. CONFLICTO DE AUTORIDAD (Cascada vs Especificidad)
-   ========================================================== */
-/* La regla por Clase equivale a 10 puntos de especificidad */
+   ======================================================== */
 .btn-comprar {
     color: #d4a5a5; /* Rosa pastel suave */
 }
 
-/* La regla por ID equivale a 100 puntos de especificidad.
-   El peso del ID aplasta el color de la clase y aplica el rosa fresita encendido */
 #btn-destacado {
     color: #ff6b8b; /* Fresita destacado */
 }
