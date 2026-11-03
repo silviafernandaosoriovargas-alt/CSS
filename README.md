@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Catálogo de Maquillaje - Simulador CSS
 
 Este repositorio contiene la solución correspondiente a la **Subactividad 1: Estructurar la jerarquía de estilos (Selectores, herencia, cascada y especificidad)**, desarrollada dentro del programa de formación **Análisis y Desarrollo de Software (ADSO)** (Ficha 3234206), bajo la tutoría del instructor John Freddy Becerra Castellanos.
@@ -45,3 +46,6 @@ El avance técnico de la sesión se consolida en la nube ejecutando los siguient
 git add .
 git commit -m "feat(styles): maquetar catalogo semantico y aplicar jerarquia CSS"
 git push origin develop
+=======
+# CSS
+>>>>>>> 1d39bfd6659b4628b82802d10dcfaf5518cdecf7
