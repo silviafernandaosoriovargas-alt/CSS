@@ -50,3 +50,18 @@ git push origin feature/modelo-caja
 1. **Diferencia práctica entre Margin y Padding:** El padding es el espacio de relleno interno entre el contenido y el borde de la caja, mientras que el margin es el espacio exterior que separa al elemento de otros elementos vecinos.
 2. **Por qué es obligatorio usar `box-sizing: border-box`:** Evita que los bordes y rellenos sumen pixeles extras al ancho total, haciendo que las cajas mantengan las dimensiones programadas sin romper el diseño.
 3. **Cómo se ven afectados los elementos hermanos:** Al aplicar un margen amplio a un elemento, este desplaza y aleja a los elementos contiguos para conservar su espacio de separación en la pantalla.
+
+## Hallazgos: Centralización de Identidad Visual y Espaciado
+
+En esta subactividad se implementó una "central de mando" usando el pseudoselector `:root` para organizar el diseño de nuestro catálogo de maquillaje. Estos son los hallazgos principales:
+
+**(1) Lista completa de variables declaradas:**
+*   **Colores:** Se definió la paleta corporativa basada en tonos rosados: `--color-primario` (#FF1493), `--color-secundario` (#FF69B4), `--color-terciario` (#FFA6C9), `--color-fondo-suave` (#FFD1DC), `--color-fondo-crema` (#fff8f9), `--color-texto` (#5c4b51) y `--color-blanco` (#ffffff).
+*   **Tipografía:** Se vinculó la fuente de Google Fonts mediante la variable `--fuente-principal` ('Poppins', sans-serif).
+*   **Espaciados (Box Model):** Se crearon medidas estandarizadas para no inventar valores: `--espaciado-pequeno` (8px), `--espaciado-medio` (16px), `--espaciado-grande` (24px) y `--espaciado-xl` (50px).
+
+**(2) La ventaja de reutilizar medidas de margen y relleno:**
+Antes de usar variables, asignar valores como "15px" o "20px" manualmente en cada selector era un riesgo. Si el cliente pedía cambiar la separación de las tarjetas, había que modificar el código línea por línea. Ahora, al usar `var(--espaciado-medio)`, garantizamos que todas las tarjetas tengan exactamente la misma proporción de aire. Si se necesita un cambio, se modifica solo una vez en el `:root` y se actualiza automáticamente en todo el sitio.
+
+**(3) ¿Cómo previene colisiones visuales la centralización en :root?**
+A medida que la hoja de estilos crece, es fácil equivocarse escribiendo un código hexadecimal a mano (por ejemplo, escribiendo un rosa ligeramente distinto). Al centralizar todo en `:root`, se elimina el error humano. Todos los elementos que usen `var(--color-primario)` serán idénticos. Esto previene que los diseños choquen entre sí, asegura una armonía visual perfecta y hace que el mantenimiento del código sea mucho más rápido y seguro a futuro.

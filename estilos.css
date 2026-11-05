@@ -1,86 +1,104 @@
+:root {
+    --color-primario: #FF1493;     
+    --color-secundario: #FF69B4;   
+    --color-terciario: #FFA6C9;    
+    --color-fondo-suave: #FFD1DC;  
+    --color-fondo-crema: #fff8f9;  
+    --color-texto: #5c4b51;        
+    --color-blanco: #ffffff;
+
+    /* 2. Tipografía */
+    --fuente-principal: 'Poppins', sans-serif; 
+
+    /* 3. Espaciados (Box Model) */
+    --espaciado-pequeno: 8px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 24px;
+    --espaciado-xl: 50px;
+}
+
 /* ========================================================
-   0. NEUTRALIZACIÓN Y MODELO DE CAJA (Subactividad 2)
+   0. NEUTRALIZACIÓN Y MODELO DE CAJA
    ======================================================== */
 * {
-  box-sizing: border-box; /* Obligatorio: hace que padding y border crezcan hacia adentro */
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
 }
 
 /* ========================================================
    1. GENÉTICA DEL NAVEGADOR (Herencia Global)
    ======================================================== */
 body {
-    font-family: sans-serif;
-    color: #5c4b51;
-    background-color: #fff8f9; /* Fondo rosa crema super delicado */
+    font-family: var(--fuente-principal); /* Aplicamos la variable de fuente */
+    color: var(--color-texto);
+    background-color: var(--color-fondo-crema); 
 }
 
 /* ========================================================
-   2. AISLAMIENTO POR ZONAS Y FONDOS (Modelo de Caja)
+   2. AISLAMIENTO POR ZONAS Y FONDOS
    ======================================================== */
 header {
-    background-color: #ffd1dc;
-    background-image: url('https://www.posizionate.com/hubfs/agentes%20ia%20hubspot.png'); /* Imagen de fondo para cumplir con la guía */
+    background-color: var(--color-fondo-suave);
+    background-image: url('https://i.pinimg.com/170x/68/ec/9b/68ec9b78140f902f0d6431497d9fc831.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 50px 20px;
+    padding: var(--espaciado-xl) var(--espaciado-medio); 
     text-align: center;
 }
 
 header nav ul {
     list-style: none;
-    margin-top: 15px;
+    margin-top: var(--espaciado-medio); 
 }
 
-/* Alinea los elementos del menú en horizontal sin usar Flexbox ni Grid */
 header nav ul li {
     display: inline-block; 
-    margin: 0 15px; /* Espacio horizontal entre cada opción */
+    margin: 0 var(--espaciado-medio); 
 }
 
 header nav ul li a {
-    color: #ffffff; /* Texto blanco para que resalte sobre la imagen */
+    color: var(--color-blanco); 
     text-decoration: none;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro suave para una lectura perfecta */
-    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: var(--espaciado-pequeno) var(--espaciado-medio); 
     border-radius: 4px;
 }
 
 main {
-    background-color: #f9f9f9;
-    padding: 20px; /* Aire interno para las tarjetas */
+    background-color: #f9f9f9; 
+    padding: var(--espaciado-medio); 
 }
 
 aside {
-    background-color: #fff0f5;
-    padding: 15px;
-    margin-top: 20px;
+    background-color: var(--color-fondo-crema);
+    padding: var(--espaciado-medio);
+    margin-top: var(--espaciado-medio);
 }
 
 aside ul li a {
-    color: #b57c9e;
+    color: var(--color-terciario); 
     text-decoration: none;
 }
 
 footer {
-    background-color: #e6e6fa;
-    padding: 15px;
+    background-color: var(--color-fondo-suave); 
+    padding: var(--espaciado-medio);
     text-align: center;
 }
 
 footer ul li a {
-    color: #d8a7b1;
+    color: var(--color-texto);
     text-decoration: none;
 }
 
-/* Espaciamiento interno (padding) y externo (margin) en las tarjetas de producto */
+/* Tarjetas de producto */
 article {
-    background-color: #ffffff;
-    padding: 20px;     /* Inyecta aire de protección para que los textos no toquen los bordes */
-    margin: 15px 0;    /* Campo de fuerza exterior para que no colisionen entre sí */
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-medio);     
+    margin: var(--espaciado-medio) 0;    
     border: 1px solid #e0e0e0;
     border-radius: 8px;
 }
@@ -89,9 +107,9 @@ article {
    3. CONFLICTO DE AUTORIDAD (Cascada vs Especificidad)
    ======================================================== */
 .btn-comprar {
-    color: #d4a5a5; /* Rosa pastel suave */
+    color: var(--color-terciario); 
 }
 
 #btn-destacado {
-    color: #ff6b8b; /* Fresita destacado */
+    color: var(--color-primario); 
 }
