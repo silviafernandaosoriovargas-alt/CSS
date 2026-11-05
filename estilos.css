@@ -1,0 +1,115 @@
+:root {
+    --color-primario: #FF1493;     
+    --color-secundario: #FF69B4;   
+    --color-terciario: #FFA6C9;    
+    --color-fondo-suave: #FFD1DC;  
+    --color-fondo-crema: #fff8f9;  
+    --color-texto: #5c4b51;        
+    --color-blanco: #ffffff;
+
+    /* 2. Tipografía */
+    --fuente-principal: 'Poppins', sans-serif; 
+
+    /* 3. Espaciados (Box Model) */
+    --espaciado-pequeno: 8px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 24px;
+    --espaciado-xl: 50px;
+}
+
+/* ========================================================
+   0. NEUTRALIZACIÓN Y MODELO DE CAJA
+   ======================================================== */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================================
+   1. GENÉTICA DEL NAVEGADOR (Herencia Global)
+   ======================================================== */
+body {
+    font-family: var(--fuente-principal); /* Aplicamos la variable de fuente */
+    color: var(--color-texto);
+    background-color: var(--color-fondo-crema); 
+}
+
+/* ========================================================
+   2. AISLAMIENTO POR ZONAS Y FONDOS
+   ======================================================== */
+header {
+    background-color: var(--color-fondo-suave);
+    background-image: url('https://i.pinimg.com/170x/68/ec/9b/68ec9b78140f902f0d6431497d9fc831.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: var(--espaciado-xl) var(--espaciado-medio); 
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin-top: var(--espaciado-medio); 
+}
+
+header nav ul li {
+    display: inline-block; 
+    margin: 0 var(--espaciado-medio); 
+}
+
+header nav ul li a {
+    color: var(--color-blanco); 
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: var(--espaciado-pequeno) var(--espaciado-medio); 
+    border-radius: 4px;
+}
+
+main {
+    background-color: #f9f9f9; 
+    padding: var(--espaciado-medio); 
+}
+
+aside {
+    background-color: var(--color-fondo-crema);
+    padding: var(--espaciado-medio);
+    margin-top: var(--espaciado-medio);
+}
+
+aside ul li a {
+    color: var(--color-terciario); 
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--color-fondo-suave); 
+    padding: var(--espaciado-medio);
+    text-align: center;
+}
+
+footer ul li a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+/* Tarjetas de producto */
+article {
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-medio);     
+    margin: var(--espaciado-medio) 0;    
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+/* ========================================================
+   3. CONFLICTO DE AUTORIDAD (Cascada vs Especificidad)
+   ======================================================== */
+.btn-comprar {
+    color: var(--color-terciario); 
+}
+
+#btn-destacado {
+    color: var(--color-primario); 
+}
