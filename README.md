@@ -1,6 +1,6 @@
 # Catálogo de Maquillaje - Simulador CSS
 
-Este repositorio contiene la solución correspondiente a la **Subactividad 1: Estructurar la jerarquía de estilos (Selectores, herencia, cascada y especificidad)**, desarrollada dentro del programa de formación **Análisis y Desarrollo de Software (ADSO)** (Ficha 3234206), bajo la tutoría del instructor John Freddy Becerra Castellanos.
+Este repositorio contiene la solución correspondiente a la **Subactividad 1: Estructurar la jerarquía de estilos (Selectores, herencia, cascada y especificidad)**, desarrollada dentro del programa de formación **Análisis y Desarrollo de Software (ADSO)** (Ficha 3381732), bajo la tutoría del instructor John Freddy Becerra Castellanos.
 
 ## 1. Descripción del Proyecto
 
