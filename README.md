@@ -65,3 +65,16 @@ Antes de usar variables, asignar valores como "15px" o "20px" manualmente en cad
 
 **(3) ¿Cómo previene colisiones visuales la centralización en :root?**
 A medida que la hoja de estilos crece, es fácil equivocarse escribiendo un código hexadecimal a mano (por ejemplo, escribiendo un rosa ligeramente distinto). Al centralizar todo en `:root`, se elimina el error humano. Todos los elementos que usen `var(--color-primario)` serán idénticos. Esto previene que los diseños choquen entre sí, asegura una armonía visual perfecta y hace que el mantenimiento del código sea mucho más rápido y seguro a futuro.
+
+## Hallazgos: Pseudoclases y Pseudoelementos
+
+En esta subactividad "4" se añadió interactividad y decoración al catálogo usando CSS puro. Estos son los aprendizajes principales:
+
+**(1) Diferencia funcional entre pseudoclase y pseudoelemento:**
+Una **pseudoclase** (como `:hover` o `:focus`) se utiliza para definir el estado de un elemento existente; es decir, reacciona a una acción del usuario (como pasar el ratón o hacer clic). En cambio, un **pseudoelemento** (como `::before` o `::after`) se usa para inyectar contenido decorativo nuevo que no existe en el HTML, creando una caja virtual antes o después del elemento.
+
+**(2) Importancia técnica del `:focus` para la accesibilidad:**
+El uso de `:focus` es fundamental para la accesibilidad web (UX). No todos los usuarios navegan con un ratón; muchos lo hacen usando la tecla Tab del teclado. Al aplicar un contorno (`outline`) personalizado y visible en los enlaces del menú lateral, garantizamos que las personas con discapacidades visuales o motrices sepan exactamente en qué parte de la página están ubicados, cumpliendo con las normas de usabilidad.
+
+**(3) Por qué inyectar decoración desde CSS (`::before/::after`) y no en HTML:**
+Es una buena práctica mantener el HTML limpio y semántico. Si añadiéramos etiquetas `<span>` vacías solo para poner un punto en el menú o una etiqueta de "¡Oferta!" en los productos, ensuciaríamos el código y dificultaríamos su lectura. Al usar los pseudoelementos, el HTML solo se encarga de la estructura y el contenido, mientras que el CSS maneja toda la decoración visual de forma dinámica.

@@ -113,3 +113,96 @@ article {
 #btn-destacado {
     color: var(--color-primario); 
 }
+
+/* ========================================================
+   SUBACTIVIDAD 4: PSEUDOCLASES Y PSEUDOELEMENTOS
+   ======================================================== */
+
+/* --- 1. MENÚ LATERAL (ASIDE) --- */
+
+aside ul li a {
+    display: block; 
+    padding: var(--espaciado-pequeno);
+    transition: all 0.3s ease; 
+}
+
+aside ul li a:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-blanco);
+}
+
+/* Símbolo decorativo (punto) */
+aside ul li a::before {
+    content: "• "; /* Símbolo que pide la guía */
+    color: var(--color-primario); 
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: var(--espaciado-pequeno);
+}
+
+/* Accesibilidad */
+aside ul li a:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}
+
+
+/* --- 2. BOTONES --- */
+
+.btn-comprar {
+    display: inline-block;
+    padding: var(--espaciado-pequeno) var(--espaciado-medio);
+    background-color: var(--color-fondo-suave); 
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: var(--espaciado-pequeno);
+    text-decoration: none;
+}
+
+.btn-comprar:hover {
+    background-color: var(--color-secundario); 
+    color: var(--color-blanco) !important; 
+}
+
+.btn-comprar:active {
+    transform: scale(0.95); 
+}
+
+
+/* --- 3. ETIQUETA "¡OFERTA!" Y CUADRÍCULA 2x2 --- */
+
+/* Le da espacio al título para que la etiqueta no choque con el texto */
+article h3 {
+    margin-bottom: var(--espaciado-medio); 
+}
+
+/* Etiqueta inyectada con ::after */
+article h3::after {
+    content: "¡Oferta!";
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-size: 0.65rem;
+    padding: 4px 10px; 
+    border-radius: 12px;
+    margin-left: var(--espaciado-medio);
+    vertical-align: middle;
+    display: inline-block; 
+    white-space: nowrap; 
+}
+
+/* Cuadrícula para 2 columnas sin desbordarse */
+main section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: var(--espaciado-medio); 
+    margin-top: var(--espaciado-medio);
+}
+
+article {
+    margin: var(--espaciado-medio) 0 !important; 
+    width: 100%; 
+}
+
+main section h2 {
+    grid-column: 1 / -1; 
+}
