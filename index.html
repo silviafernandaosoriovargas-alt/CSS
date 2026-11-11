@@ -1,101 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catálogo de Maquillaje - Simulador CSS</title>
-    
+
     <!-- 1. INYECCIÓN DE TIPOGRAFÍA (Google Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- 2. VINCULACIÓN DEL CSS (Corregida la ruta a la carpeta CSS) -->
-       
-   <style>
-     @import url('/css/style.css');
-     @import url('/css/botones.css');
-     @import url('/css/tarjetas.css');
-     @import url('/css/menu-lateral.css');
-   </style>
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- 1. Encabezado y Barra de Navegación -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Catálogo</a></li>
-                <li><a href="#">Tendencias</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+    <header class="encabezado">
+      <nav class="navegacion">
+        <ul class="navegacion__lista">
+          <li class="navegacion__item"><a href="#">Inicio</a></li>
+          <li class="navegacion__item"><a href="#">Catálogo</a></li>
+          <li class="navegacion__item"><a href="#">Tendencias</a></li>
+          <li class="navegacion__item"><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- 2. Cuerpo dividido entre zona central y barra lateral -->
     <div class="contenedor-principal">
-        
-        <!-- Zona Central de Productos (Mínimo 4 productos de maquillaje) -->
-        <main>
-            <section>
-                <h2>Nuestros Productos de Maquillaje</h2>
-                
-                <!-- Producto 1 (Con clase e ID para el conflicto de especificidad) -->
-                <article>
-                    <h3>Base Líquida HD Mate</h3>
-                    <p>Alta cobertura de larga duración con acabado natural y control de grasa para todo el día.</p>
-                    <p class="precio">$45.000</p>
-                    <a href="#" class="btn-comprar" id="btn-destacado">Comprar</a>
-                </article>
+      <!-- Zona Central de Productos (Mínimo 4 productos de maquillaje) -->
+      <main class="catalogo">
+        <section class="catalogo__seccion">
+          <h2 class="catalogo__titulo">Nuestros Productos de Maquillaje</h2>
 
-                <!-- Producto 2 -->
-                <article>
-                    <h3>Paleta de Sombras Nude</h3>
-                    <p>12 tonos altamente pigmentados entre mates y satinados ideales para cualquier ocasión.</p>
-                    <p class="precio">$65.000</p>
-                    <a href="#" class="btn-comprar">Comprar</a>
-                </article>
+          <!-- PRODUCTO 1: TARJETA DESTACADA -->
+          <article class="tarjeta tarjeta--destacada">
+            <img
+              src="img/base.png"
+              alt="Base líquida HD Mate"
+              class="tarjeta__imagen"
+            />
 
-                <!-- Producto 3 -->
-                <article>
-                    <h3>Rubor Líquido Glow</h3>
-                    <p>Aporta un toque de color jugoso y natural a las mejillas con textura ligera y difuminable.</p>
-                    <p class="precio">$30.000</p>
-                    <a href="#" class="btn-comprar">Comprar</a>
-                </article>
+            <h3 class="tarjeta__titulo">Base Líquida HD Mate</h3>
 
-                <!-- Producto 4 -->
-                <article>
-                    <h3>Labial Velvet Matte</h3>
-                    <p>Color intenso de una sola pasada que no reseca los labios y ofrece un terciopelo suave.</p>
-                    <p class="precio">$25.000</p>
-                    <a href="#" class="btn-comprar">Comprar</a>
-                </article>
-            </section>
-        </main>
+            <p class="tarjeta__descripcion">
+              Alta cobertura de larga duración con acabado natural y control de
+              grasa para todo el día.
+            </p>
 
-        <!-- Barra Lateral (Menú secundario de filtros) -->
-        <aside>
-            <h2>Categorías</h2>
-            <ul>
-                <li><a href="#">Rostro y Base</a></li>
-                <li><a href="#">Ojos y Cejas</a></li>
-                <li><a href="#">Labios</a></li>
-                <li><a href="#">Skincare</a></li>
-            </ul>
-        </aside>
+            <p class="tarjeta__precio">$45.000</p>
 
+            <a href="#" class="boton boton--destacado">Comprar</a>
+          </article>
+
+          <!-- PRODUCTO 2: BOTÓN SECUNDARIO -->
+          <article class="tarjeta">
+            <img
+              src="img/sombras.png"
+              alt="Paleta de Sombras Nude"
+              class="tarjeta__imagen"
+            />
+
+            <h3 class="tarjeta__titulo">Paleta de Sombras Nude</h3>
+
+            <p class="tarjeta__descripcion">
+              12 tonos altamente pigmentados entre mates y satinados ideales
+              para cualquier ocasión.
+            </p>
+
+            <p class="tarjeta__precio">$65.000</p>
+
+            <a href="#" class="boton boton--secundario">Comprar</a>
+          </article>
+
+          <!-- PRODUCTO 3: TARJETA NORMAL -->
+          <article class="tarjeta">
+            <img
+              src="img/rubor.png"
+              alt="Rubor Líquido Glow"
+              class="tarjeta__imagen"
+            />
+
+            <h3 class="tarjeta__titulo">Rubor Líquido Glow</h3>
+
+            <p class="tarjeta__descripcion">
+              Aporta un toque de color jugoso y natural a las mejillas con
+              textura ligera y difuminable.
+            </p>
+
+            <p class="tarjeta__precio">$30.000</p>
+
+            <a href="#" class="boton">Comprar</a>
+          </article>
+
+          <!-- PRODUCTO 4: TARJETA ESPECIAL -->
+          <article class="tarjeta tarjeta--especial">
+            <img
+              src="img/labial.png"
+              alt="Labial Velvet Matte"
+              class="tarjeta__imagen"
+            />
+
+            <h3 class="tarjeta__titulo">Labial Velvet Matte</h3>
+
+            <p class="tarjeta__descripcion">
+              Color intenso de una sola pasada que no reseca los labios y ofrece
+              un terciopelo suave.
+            </p>
+
+            <p class="tarjeta__precio">$25.000</p>
+
+            <a href="#" class="boton boton--destacado">Comprar</a>
+          </article>
+        </section>
+      </main>
+
+      <!-- Barra Lateral (Menú secundario de filtros) -->
+      <aside class="menu-lateral">
+        <h2 class="menu-lateral__titulo">Categorías</h2>
+
+        <ul class="menu-lateral__lista">
+          <li class="menu-lateral__item"><a href="#">Rostro y Base</a></li>
+          <li class="menu-lateral__item"><a href="#">Ojos y Cejas</a></li>
+          <li class="menu-lateral__item"><a href="#">Labios</a></li>
+          <li class="menu-lateral__item"><a href="#">Skincare</a></li>
+        </ul>
+      </aside>
     </div>
 
     <!-- 3. Pie de página -->
-    <footer>
-        <p>&copy; 2026 Catálogo de Maquillaje. Todos los derechos reservados.</p>
-        <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">TikTok</a></li>
-        </ul>
-    </footer>
+    <footer class="pie-pagina">
+      <p class="pie-pagina__texto">
+        &copy; 2026 Catálogo de Maquillaje. Todos los derechos reservados.
+      </p>
 
-</body>
+      <ul class="pie-pagina__lista">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </footer>
+  </body>
 </html>
