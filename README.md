@@ -18,11 +18,11 @@ Siguiendo los lineamientos del instrumento de evaluación, el diseño se enfoca 
 
 Para determinar la autoridad de los selectores y resolver conflictos de estilo en el navegador, se utiliza el sistema matemático oficial de cálculo de especificidad:
 
-| Tipo de Selector | Identificador / Sintaxis | Puntuación de Especificidad | Ejemplos en el Proyecto |
-| --- | --- | --- | --- |
-| **Etiqueta (Elemento)** | `etiqueta` | **1 pt** | `body`, `header`, `h2`, `p`, `a` |
-| **Clase** | `.clase` | **10 pts** | `.btn-comprar`, `.destacado` |
-| **Identificador** | `#id` | **100 pts** | `#btn-destacado` |
+| Tipo de Selector        | Identificador / Sintaxis | Puntuación de Especificidad | Ejemplos en el Proyecto          |
+| ----------------------- | ------------------------ | --------------------------- | -------------------------------- |
+| **Etiqueta (Elemento)** | `etiqueta`               | **1 pt**                    | `body`, `header`, `h2`, `p`, `a` |
+| **Clase**               | `.clase`                 | **10 pts**                  | `.btn-comprar`, `.destacado`     |
+| **Identificador**       | `#id`                    | **100 pts**                 | `#btn-destacado`                 |
 
 ### Demostración del Conflicto y Refactorización Final
 
@@ -33,9 +33,9 @@ Para determinar la autoridad de los selectores y resolver conflictos de estilo e
 
 - **Herencia Global:** Declaración de la propiedad `font-family: sans-serif;` y del color de texto base en el selector `body`, permitiendo que los elementos hijos adopten estos estilos globalmente de forma heredada.
 - **Aislamiento por Zonas (Selectores Combinados):** Uso de selectores específicos por ubicación para aplicar color a los enlaces sin interferir entre secciones:
-  * `header nav ul li a`: Enlaces del menú de navegación principal.
-  * `aside ul li a`: Enlaces del menú secundario de categorías.
-  * `footer ul li a`: Enlaces de redes sociales y pie de página.
+  - `header nav ul li a`: Enlaces del menú de navegación principal.
+  - `aside ul li a`: Enlaces del menú secundario de categorías.
+  - `footer ul li a`: Enlaces de redes sociales y pie de página.
 
 ## 5. Control de Versiones
 
@@ -78,3 +78,42 @@ El uso de `:focus` es fundamental para la accesibilidad web (UX). No todos los u
 
 **(3) Por qué inyectar decoración desde CSS (`::before/::after`) y no en HTML:**
 Es una buena práctica mantener el HTML limpio y semántico. Si añadiéramos etiquetas `<span>` vacías solo para poner un punto en el menú o una etiqueta de "¡Oferta!" en los productos, ensuciaríamos el código y dificultaríamos su lectura. Al usar los pseudoelementos, el HTML solo se encarga de la estructura y el contenido, mientras que el CSS maneja toda la decoración visual de forma dinámica.
+
+## Hallazgos: Arquitectura BEM y Modularidad
+
+Durante el desarrollo de mi catálogo de maquillaje aprendí a organizar mejor los estilos de mi página utilizando la metodología BEM y separando el código CSS en diferentes archivos.
+
+### 1. ¿Qué significa BEM y cómo se escribe?
+
+BEM significa **Block, Element, Modifier** (Bloque, Elemento y Modificador).
+
+Es una forma de organizar los nombres de las clases en HTML y CSS para identificar mejor cada parte de la página.
+
+Se escribe de la siguiente manera:
+
+- **Bloque:** es el componente principal. Ejemplo: `.tarjeta`.
+- **Elemento:** es una parte que pertenece al bloque y se identifica con dos guiones bajos `__`. Ejemplo: `.tarjeta__titulo`.
+- **Modificador:** sirve para darle una apariencia diferente a un componente y se identifica con dos guiones medios `--`. Ejemplo: `.tarjeta--destacada`.
+
+Con esta metodología puedo identificar más fácilmente cada elemento y mantener el código organizado.
+
+### 2. ¿Por qué dividir el CSS en varios archivos facilita el trabajo colaborativo?
+
+Dividir el CSS en varios archivos permite tener los estilos separados según su función. En mi proyecto creé archivos como `tarjetas.css`, `botones.css`, `menu-lateral.css` y `style.css`.
+
+Esto facilita el trabajo en equipo porque cada persona puede trabajar en un componente diferente sin tener que modificar todo el código. También permite encontrar los estilos más rápido, hacer cambios y evitar tener toda la información en un solo archivo.
+
+### 3. ¿Cómo evita la guerra de especificidad en CSS?
+
+La guerra de especificidad ocurre cuando varios estilos intentan modificar el mismo elemento y algunos tienen más prioridad que otros, haciendo que sea difícil controlar cuál estilo se aplica.
+
+Con BEM se utilizan clases más específicas y organizadas, evitando depender de selectores anidados demasiado largos.
+
+Por ejemplo, en lugar de escribir `.producto h2`, utilizamos `.tarjeta__titulo`.
+
+De esta manera, los estilos tienen una estructura más sencilla y un peso más plano, lo que ayuda a evitar conflictos entre las reglas CSS y facilita los cambios en el diseño.
+
+### Conclusión
+
+Con este ejercicio aprendí que organizar el código es importante para que un proyecto sea más fácil de entender, modificar y mantener. También comprendí que BEM y la modularidad ayudan a tener un código más ordenado y facilitan el trabajo cuando se desarrolla en equipo.
+```

@@ -1,26 +1,35 @@
-.btn-comprar {
-    color: var(--color-terciario); 
+/* BLOQUE: BOTÓN */
+.boton {
+  display: inline-block;
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-#btn-destacado {
-    color: var(--color-primario); 
+/* EFECTO DEL BOTÓN */
+.boton:hover {
+  background-color: var(--color-destacado);
 }
 
-.btn-comprar {
-    display: inline-block;
-    padding: var(--espaciado-pequeno) var(--espaciado-medio);
-    background-color: var(--color-fondo-suave); 
-    border-radius: 4px;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    margin-top: var(--espaciado-pequeno);
-    text-decoration: none;
+/* MODIFICADOR: BOTÓN DESTACADO */
+.boton--destacado {
+  background-color: var(--color-destacado);
+  color: var(--color-blanco);
+  border: 2px solid var(--color-principal);
 }
 
-.btn-comprar:hover {
-    background-color: var(--color-secundario); 
-    color: var(--color-blanco) !important; 
+/* MODIFICADOR: BOTÓN SECUNDARIO */
+.boton--secundario {
+  background-color: var(--color-secundario);
+  color: var(--color-destacado);
+  border: 2px solid var(--color-principal);
 }
 
-.btn-comprar:active {
-    transform: scale(0.95); 
+/* EFECTO DEL BOTÓN SECUNDARIO */
+.boton--secundario:hover {
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
 }

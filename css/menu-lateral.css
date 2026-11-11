@@ -1,25 +1,32 @@
-aside ul li a {
-    display: block; 
-    padding: var(--espaciado-pequeno);
-    transition: all 0.3s ease; 
+
+/* COMPONENTE MENÚ LATERAL */
+.menu-lateral {
+    flex: 1;
+    background-color: #fce4ec;
+    padding: 20px;
+    border-radius: 12px;
 }
 
-aside ul li a:hover {
-    background-color: var(--color-terciario);
-    color: var(--color-blanco);
+.menu-lateral__titulo {
+    color: #d96c9d;
+    text-align: center;
 }
 
-/* Símbolo decorativo (punto) */
-aside ul li a::before {
-    content: "• "; /* Símbolo que pide la guía */
-    color: var(--color-primario); 
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-right: var(--espaciado-pequeno);
+.menu-lateral__lista {
+    list-style: none;
+    padding: 0;
 }
 
-/* Accesibilidad */
-aside ul li a:focus {
-    outline: 3px solid var(--color-secundario);
-    outline-offset: 2px;
+.menu-lateral__item {
+    padding: 12px 5px;
+    border-bottom: 1px solid #e8a9c3;
+}
+
+.menu-lateral__item a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.menu-lateral__item a:hover {
+    color: #d96c9d;
 }

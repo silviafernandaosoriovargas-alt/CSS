@@ -1,136 +1,95 @@
+/* IMPORTACIÓN DE COMPONENTES */
+@import url("./botones.css");
+@import url("./tarjetas.css");
+@import url("./menu-lateral.css");
+
+/* VARIABLES GENERALES */
 :root {
-    --color-primario: #FF1493;     
-    --color-secundario: #FF69B4;   
-    --color-terciario: #FFA6C9;    
-    --color-fondo-suave: #FFD1DC;  
-    --color-fondo-crema: #fff8f9;  
-    --color-texto: #5c4b51;        
-    --color-blanco: #ffffff;
+  --color-principal: #d96c9d;
+  --color-secundario: #fce4ec;
+  --color-texto: #333333;
+  --color-blanco: #ffffff;
+  --color-destacado: #8e2456;
 
-    /* 2. Tipografía */
-    --fuente-principal: 'Poppins', sans-serif; 
+  --tamanio-titulo: 24px;
+  --tamanio-texto: 14px;
+  --tamanio-precio: 20px;
 
-    /* 3. Espaciados (Box Model) */
-    --espaciado-pequeno: 8px;
-    --espaciado-medio: 16px;
-    --espaciado-grande: 24px;
-    --espaciado-xl: 50px;
+  --radio-tarjeta: 12px;
+  --espaciado: 20px;
 }
 
-/* ========================================================
-   0. NEUTRALIZACIÓN Y MODELO DE CAJA
-   ======================================================== */
+/* ESTILOS GENERALES */
 * {
-    box-sizing: border-box; 
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
 }
 
-/* ========================================================
-   1. GENÉTICA DEL NAVEGADOR (Herencia Global)
-   ======================================================== */
 body {
-    font-family: var(--fuente-principal); /* Aplicamos la variable de fuente */
-    color: var(--color-texto);
-    background-color: var(--color-fondo-crema); 
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff5f8;
+  color: var(--color-texto);
 }
 
-/* ========================================================
-   2. AISLAMIENTO POR ZONAS Y FONDOS
-   ======================================================== */
-header {
-    background-color: var(--color-fondo-suave);
-    background-image: url('https://i.pinimg.com/170x/68/ec/9b/68ec9b78140f902f0d6431497d9fc831.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: var(--espaciado-xl) var(--espaciado-medio); 
-    text-align: center;
+/* ENCABEZADO */
+.encabezado {
+  background-color: var(--color-principal);
+  padding: 15px;
 }
 
-header nav ul {
-    list-style: none;
-    margin-top: var(--espaciado-medio); 
+.navegacion__lista {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
 }
 
-header nav ul li {
-    display: inline-block; 
-    margin: 0 var(--espaciado-medio); 
+.navegacion__item a {
+  color: var(--color-blanco);
+  text-decoration: none;
 }
 
-header nav ul li a {
-    color: var(--color-blanco); 
-    text-decoration: none;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.4); 
-    padding: var(--espaciado-pequeno) var(--espaciado-medio); 
-    border-radius: 4px;
+/* CONTENEDOR PRINCIPAL */
+.contenedor-principal {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
 }
 
-main {
-    background-color: #f9f9f9; 
-    padding: var(--espaciado-medio); 
+.catalogo {
+  flex: 3;
 }
 
-aside {
-    background-color: var(--color-fondo-crema);
-    padding: var(--espaciado-medio);
-    margin-top: var(--espaciado-medio);
+.catalogo__seccion {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-aside ul li a {
-    color: var(--color-terciario); 
-    text-decoration: none;
+.catalogo__titulo {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-principal);
 }
 
-footer {
-    background-color: var(--color-fondo-suave); 
-    padding: var(--espaciado-medio);
-    text-align: center;
+/* PIE DE PÁGINA */
+.pie-pagina {
+  background-color: var(--color-principal);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-footer ul li a {
-    color: var(--color-texto);
-    text-decoration: none;
+.pie-pagina__lista {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
-
-
-
-/* --- 3. ETIQUETA "¡OFERTA!" Y CUADRÍCULA 2x2 --- */
-
-/* Le da espacio al título para que la etiqueta no choque con el texto */
-article h3 {
-    margin-bottom: var(--espaciado-medio); 
-}
-
-/* Etiqueta inyectada con ::after */
-article h3::after {
-    content: "¡Oferta!";
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    font-size: 0.65rem;
-    padding: 4px 10px; 
-    border-radius: 12px;
-    margin-left: var(--espaciado-medio);
-    vertical-align: middle;
-    display: inline-block; 
-    white-space: nowrap; 
-}
-
-/* Cuadrícula para 2 columnas sin desbordarse */
-main section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: var(--espaciado-medio); 
-    margin-top: var(--espaciado-medio);
-}
-
-article {
-    margin: var(--espaciado-medio) 0 !important; 
-    width: 100%; 
-}
-
-main section h2 {
-    grid-column: 1 / -1; 
+.pie-pagina__lista a {
+  color: white;
+  text-decoration: none;
 }
