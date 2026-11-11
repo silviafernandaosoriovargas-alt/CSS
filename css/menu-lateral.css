@@ -1,0 +1,25 @@
+aside ul li a {
+    display: block; 
+    padding: var(--espaciado-pequeno);
+    transition: all 0.3s ease; 
+}
+
+aside ul li a:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-blanco);
+}
+
+/* Símbolo decorativo (punto) */
+aside ul li a::before {
+    content: "• "; /* Símbolo que pide la guía */
+    color: var(--color-primario); 
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: var(--espaciado-pequeno);
+}
+
+/* Accesibilidad */
+aside ul li a:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}

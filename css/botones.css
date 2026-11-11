@@ -1,0 +1,26 @@
+.btn-comprar {
+    color: var(--color-terciario); 
+}
+
+#btn-destacado {
+    color: var(--color-primario); 
+}
+
+.btn-comprar {
+    display: inline-block;
+    padding: var(--espaciado-pequeno) var(--espaciado-medio);
+    background-color: var(--color-fondo-suave); 
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: var(--espaciado-pequeno);
+    text-decoration: none;
+}
+
+.btn-comprar:hover {
+    background-color: var(--color-secundario); 
+    color: var(--color-blanco) !important; 
+}
+
+.btn-comprar:active {
+    transform: scale(0.95); 
+}
