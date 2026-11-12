@@ -1,20 +1,32 @@
-
 /* COMPONENTE MENÚ LATERAL */
 .menu-lateral {
     flex: 1;
     background-color: #fce4ec;
     padding: 20px;
     border-radius: 12px;
+    
+    /* REGLAS FLEXBOX AÑADIDAS */
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado); /* Usa tu variable de 20px para separar los bloques */
+    height: fit-content; 
 }
 
 .menu-lateral__titulo {
     color: #d96c9d;
     text-align: center;
+    margin: 0; /* Quitamos el margen por defecto para que el gap controle el espacio */
 }
 
 .menu-lateral__lista {
     list-style: none;
     padding: 0;
+    margin: 0;
+    
+    /* REGLA FLEXBOX AÑADIDA */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Separación uniforme entre cada categoría */
 }
 
 .menu-lateral__item {

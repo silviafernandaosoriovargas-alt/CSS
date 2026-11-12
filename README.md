@@ -117,3 +117,13 @@ De esta manera, los estilos tienen una estructura más sencilla y un peso más p
 
 Con este ejercicio aprendí que organizar el código es importante para que un proyecto sea más fácil de entender, modificar y mantener. También comprendí que BEM y la modularidad ayudan a tener un código más ordenado y facilitan el trabajo cuando se desarrolla en equipo.
 ```
+## Hallazgos: Arquitectura Total con Flexbox
+
+**(1) ¿Por qué fue crucial aplicar `min-height: 100vh` y `flex-direction: column`?**
+Para evitar que el pie de página (footer) quedara "flotando" en medio de la pantalla si había poco contenido. Al usar `column`, apilamos todo verticalmente, y con `100vh` obligamos a la página a medir lo mismo que la pantalla. Esto, junto con `flex: 1` en el centro, empuja el footer siempre hasta el fondo.
+
+**(2) ¿Cómo la propiedad `gap` reemplazó los márgenes laterales?**
+Antes usábamos `margin-right` en cada enlace, lo que ensuciaba el código y dejaba un espacio extra al final de la lista. Con `gap`, el contenedor padre calcula automáticamente una separación exacta y uniforme entre todos sus elementos hijos, haciendo el código más limpio.
+
+**(3) ¿Cómo BEM, Variables y Flexbox crearon tarjetas resistentes?**
+BEM nos dio clases claras (ej. `.tarjeta__descripcion`), las Variables mantuvieron los colores unificados, y Flexbox (con `flex-grow: 1` en la descripción) creó un "resorte invisible". Si un texto es corto y otro largo, este resorte se estira para empujar el botón de compra siempre al fondo, logrando que todas las tarjetas midan igual y los botones queden alineados.

@@ -5,6 +5,11 @@
   border-radius: var(--radio-tarjeta);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  
+  /* REGLAS FLEXBOX AÑADIDAS */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Obliga a todas las tarjetas a medir exactamente lo mismo */
 }
 
 /* ELEMENTOS DE LA TARJETA */
@@ -24,12 +29,33 @@
 .tarjeta__descripcion {
   color: var(--color-texto);
   font-size: var(--tamanio-texto);
+  
+  /* REGLA FLEXBOX AÑADIDA: El resorte invisible */
+  flex-grow: 1; /* Empuja el precio y el botón hacia el fondo de la tarjeta */
 }
 
 .tarjeta__precio {
   color: var(--color-principal);
   font-size: var(--tamanio-precio);
   font-weight: bold;
+  /* ELIMINADO EL margin: 0 auto PARA QUE EL SPACE-BETWEEN FUNCIONE */
+}
+
+/* MICRO-FLEXBOX DEL PRECIO (Exactamente como pide la guía) */
+.tarjeta__precio-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px 0;
+  width: 100%; /* Asegura que ocupe todo el ancho para que el space-between se note */
+}
+
+/* Estilo para el precio tachado */
+.tarjeta__precio-anterior {
+  color: #999999;
+  font-size: 14px;
+  text-decoration: line-through;
+  /* ELIMINADO EL margin-left PARA QUE EL SPACE-BETWEEN LO PEGUE A LA DERECHA */
 }
 
 /* MODIFICADORES */
